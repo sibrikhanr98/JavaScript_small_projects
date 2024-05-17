@@ -1,13 +1,17 @@
 // document.getElementById('count-el').innerText=5
 let count = 0
-let countEL = document.getElementById('count-el')
+let countEl = document.getElementById('count-el')
+let saveEl = document.getElementById('save-el')
 function increment() 
 {
     count +=1
-    countEL.innerText = count
+    countEl.innerText = count
 }
 
 function save()
 {
-    console.log(count)
+    let countstr = count + " - "
+
+    saveEl.innerText += countstr
+    //console.log(count)
 }
