@@ -15,6 +15,8 @@ function save()
 
     //saveEl.innerText += countstr
     saveEl.textContent += countstr
+    countEl.textContent = 0
+    count = 0
     //console.log(count)
 
     /* use textContent instead of usiing innerText becouse
