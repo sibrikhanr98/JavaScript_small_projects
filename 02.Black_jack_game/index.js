@@ -1,4 +1,4 @@
-let firstCard = 10
+let firstCard = 4
 let secondCard = 11
 
 let sum = firstCard + secondCard
@@ -9,18 +9,23 @@ let message = ''
 let messageEl = document.getElementById('message-el')
 let sumEl = document.getElementById('sum-el')
 let cardEl = document.getElementById('card-el')
-function startgame()
+
+function startGame()
+{
+    renderGame()
+}
+function renderGame()
 {
     cardEl.textContent = "Cards: " + firstCard + " " + secondCard
     sumEl.textContent = "Sum: " + sum
         
-    if (sum <= 21)
+    if (sum <= 20)
         {
             message = "Do you want to draw a new card? "
         }
     else if (sum === 21)
         {
-            message = "Wohoo! You've got Blackjack! "
+            message = "You've got Blackjack! "
             hasBlackjack = true
         }
     else
@@ -30,4 +35,11 @@ function startgame()
         }
     messageEl.textContent = message
     
+}
+function newCard()
+{
+    // console.log("Drawing new card from the deck!")
+    let card = 4
+    sum += card
+    renderGame()
 }
