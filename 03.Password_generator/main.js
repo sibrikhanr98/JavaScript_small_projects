@@ -5,9 +5,9 @@ const lowercase_el = document.querySelector('#lowercase');
 const number_el = document.querySelector('#numbers');
 const symbol_el = document.querySelector('#symbols');
 
-const generator_btn = document.querySelector('#generator');
+const generator_btn = document.querySelector("#generator");
 generator_btn.addEventListener('click',generatePassword);
-const copy_btn = document.querySelector('#copy');
+const copy_btn = document.querySelector("#copy");
 copy_btn.addEventListener('click', CopyPassword);
 
 const uppercase_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -35,9 +35,9 @@ function generatePassword(){
     console.log(password)
 }
 
-async function CopyPassword(){
+function CopyPassword(){
     if (navigator.clipboard) {
-		await navigator.clipboard.writeText(password_el.value);
+		navigator.clipboard.writeText(password_el.value);
 
 		alert("Password copied to clipboard");
 	}
