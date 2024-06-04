@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Password Generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <div class="generator">
+                <h1>Password Generator</h1>
+                <label class="password-wrap">
+                    <input 
+                        type="text" 
+                        id="password" 
+                        readonly 
+                        placeholder="Generate a password" 
+                    />
+                    <button class="material-symbols-outlined" id="copy">content_copy</button>
+                </label>
+
+                <label>
+                    <span>Password length</span>
+                    <input type="number" id="length" value="16">
+                </label>
+
+                <label>
+                    <span>Include Uppercase Letetrs</span>
+                    <input type="checkbox" id="uppercase" checked>
+                </label>
+
+                <label>
+                    <span>Include Lowercase Letters</span>
+                    <input type="checkbox" id="lowercase" checked>
+                </label>
+
+                <label>
+                    <span>Include Numbers</span>
+                    <input type="checkbox" id="numbers" checked>
+                </label>
+
+                <label>
+                    <span>Include Symbols</span>
+                    <input type="checkbox" id="symbols" checked>
+                </label>
+                <button type="submit" id="generator">Generate Password</button>
+            </div>
+        </main>
+        <script src="main.js" async defer></script>
+    </body>
+</html>
