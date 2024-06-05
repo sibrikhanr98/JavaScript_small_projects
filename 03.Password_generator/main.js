@@ -1,13 +1,13 @@
-const password_el = document.querySelector('#password');
-const length_el = document.querySelector('#length');
-const uppercase_el = document.querySelector('#uppercase');
-const lowercase_el = document.querySelector('#lowercase');
-const number_el = document.querySelector('#numbers');
-const symbol_el = document.querySelector('#symbols');
+const password_el = document.getElementById('password');
+const length_el = document.getElementById('length');
+const uppercase_el = document.getElementById('uppercase');
+const lowercase_el = document.getElementById('lowercase');
+const number_el = document.getElementById('numbers');
+const symbol_el = document.getElementById('symbols');
 
-const generator_btn = document.querySelector("#generator");
+const generator_btn = document.getElementById("generator");
 generator_btn.addEventListener('click',generatePassword);
-const copy_btn = document.querySelector("#copy");
+const copy_btn = document.getElementById("copy");
 copy_btn.addEventListener('click', CopyPassword);
 
 const uppercase_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -32,13 +32,15 @@ function generatePassword(){
     }
 
     password_el.value = password;
-    console.log(password)
 }
 
-function CopyPassword(){
-    if (navigator.clipboard) {
-		navigator.clipboard.writeText(password_el.value);
-
-		alert("Password copied to clipboard");
-	}
+async function CopyPassword() {
+    try {
+        await navigator.clipboard.writeText(password_el.value);
+        alert("Password copied to clipboard");
+    } catch (error) {
+        console.error("Failed to copy password: ", error);
+        // Fallback: display a message or provide alternative method for copying
+        alert("Failed to copy password. Please try again or use manual copy.");
+    }
 }
