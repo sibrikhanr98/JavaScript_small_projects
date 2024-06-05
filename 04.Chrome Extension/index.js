@@ -3,8 +3,8 @@
 //     console.log("Button clicked from onlick attribute");
 // }
 
-let savebtn = document.getElementById('input-btn')
+let inputbtn = document.getElementById('input-btn')
 
-savebtn.addEventListener("click",function(){
+inputbtn.addEventListener("click",function(){
     console.log("Button clicked from the addEventListener")
 })
