@@ -10,9 +10,10 @@ input{
     border: 1px solid #5f9342;
     margin-bottom: 4px;
 }
+
 button{
     background: #5f9342;
-    color: white;
+    color: rgb(253, 253, 253);
     padding: 10px 20px; /*if the bottom top and left right padding is identical*/
     /*padding-right: 20px;
     padding-bottom: 10px;
