@@ -4,15 +4,34 @@
 // }
 
 let myLeads = []
+
+// String to array and array to String to use local Storage
+
+    // let myArray = `["Hello world"]` //String
+
+    // myArray = JSON.parse(myArray)  //String to Array
+
+    // myArray.push("Pushing to array")
+
+    // myArray = JSON.stringify(myArray) //Array to String
+
+    // console.log(myArray)
+
+//
+
 const inputEl = document.getElementById('input-el')
 const inputbtn = document.getElementById('input-btn')
 const ulEl = document.getElementById('ul-el')
+
+
 
 inputbtn.addEventListener("click",function(){
     myLeads.push(inputEl.value);
     //console.log(myLeads)
     inputEl.value = ""
+    localStorage.setItem("myLeads",JSON.stringify(myLeads))
     rednerLeads()
+    console.log(localStorage.getItem("myLeads"))
 })
 
 
