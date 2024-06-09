@@ -24,18 +24,24 @@ const inputbtn = document.getElementById('input-btn')
 const ulEl = document.getElementById('ul-el')
 
 
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
+if(leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
 
 inputbtn.addEventListener("click",function(){
     myLeads.push(inputEl.value);
     //console.log(myLeads)
     inputEl.value = ""
     localStorage.setItem("myLeads",JSON.stringify(myLeads))
-    rednerLeads()
+    renderLeads()
     console.log(localStorage.getItem("myLeads"))
 })
 
 
-function rednerLeads(){
+function renderLeads(){
     // one way to do
     // for (let i = 0; i < myLeads.length; i++){
     //     // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"\
